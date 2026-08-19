@@ -1,3 +1,13 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
+
+
+
+
 with orders as  (
     select * from {{ ref ('stg_jaffle_shop__orders' )}}
 ),
@@ -28,3 +38,14 @@ order_payments as (
 )
 
 select * from final
+
+-- création de l'incremental en plus de la config en haut du modèle
+-- si on regarde la preview il ya aura rien car pas de nouvelles données
+-- "if_incremntal" -> pour avoir la preconfiguration
+{% if is_incremental() %}
+    -- this filter will only be applied on an incremental run
+    where order_date > (select max(order_date) from {{ this }}) 
+{% endif %}
+
+-- 
+order by order_date desc

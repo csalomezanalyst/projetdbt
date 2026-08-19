@@ -1,3 +1,11 @@
+-- par dégaut les marts sont des tables cf le yaml du projet mais on peut aussi le modifier au niveau du modèle
+
+{{
+    config(
+        materialized='view'
+    )
+}}
+
 with customers as (
 
     select * from {{ ref('stg_jaffle_shop__customers') }}
