@@ -4,7 +4,9 @@ with
 
     select * from {{ source('jaffle_shop', 'customers') }}
 
-    ) 
+    ),
+
+transformed as ( 
     
     select
     /* voir stg orders pour voir l'autogeneration*/
@@ -13,3 +15,7 @@ with
         last_name
 
     from source
+
+)
+
+select * from transfomed

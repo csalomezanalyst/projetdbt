@@ -1,6 +1,7 @@
 models:
   - name: stg_jaffle_shop__customers
-    description: 
+    description: table de dim customers
+    
     columns:
       - name: customer_id
         data_tests:

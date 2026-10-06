@@ -1,10 +1,14 @@
 models:
   - name: stg_jaffle_shop__orders
+    description: table de fait commandes
+
+
     columns:
       - name: order_id
         data_tests:
           - unique
           - not_null
+
       - name: order_status
         data_tests:
           - accepted_values:
@@ -15,9 +19,10 @@ models:
                   - returned
                   - placed
                   - return_pending
+                  
       - name: customer_id
         data_tests:
-## teste si toutes les commandes ont un customer dans la table customer
+          ## teste si toutes les commandes ont un customer dans la table customer
           - relationships:
               arguments:
                 to: ref('stg_jaffle_shop__customers')

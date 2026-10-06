@@ -8,7 +8,7 @@ source as (
 
 ),
 
-renamed as (
+transformed as (
 
     select
     
@@ -21,4 +21,4 @@ renamed as (
 
 )
 
-select * from renamed
+select * from transformed
