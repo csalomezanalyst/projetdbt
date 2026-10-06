@@ -18,4 +18,4 @@ transformed as (
 
 )
 
-select * from transfomed
+select * from transformed
