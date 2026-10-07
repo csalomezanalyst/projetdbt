@@ -44,4 +44,7 @@ models:
     marts:
     #best practice a table for bi tool
       +materialized: table
+    # si une nouvelle colonne est ajoutée alors ca passe pas
+      +on_schema_change: fail
+      +schema: use_case_tableau
 
