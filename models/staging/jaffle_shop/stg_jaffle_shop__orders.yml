@@ -2,7 +2,6 @@ models:
   - name: stg_jaffle_shop__orders
     description: table de fait commandes
 
-
     columns:
       - name: order_id
         data_tests:
@@ -19,7 +18,7 @@ models:
                   - returned
                   - placed
                   - return_pending
-                  
+
       - name: customer_id
         data_tests:
           ## teste si toutes les commandes ont un customer dans la table customer
