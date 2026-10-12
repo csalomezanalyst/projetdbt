@@ -2,7 +2,11 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
+<<<<<<< HEAD
 name: 'my_new_project'
+=======
+name: 'dbt_fundamentals_on_demand'
+>>>>>>> cdbea2ea35c24dd214972dfe0aaba4e7c8f13be4
 version: '1.0.0'
 config-version: 2
 
@@ -22,7 +26,11 @@ snapshot-paths: ["snapshots"]
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
+<<<<<<< HEAD
   - "dbt_packages"
+=======
+  - "dbt_packages"  
+>>>>>>> cdbea2ea35c24dd214972dfe0aaba4e7c8f13be4
 
 
 # Configuring models
@@ -36,7 +44,22 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+<<<<<<< HEAD
   my_new_project:
     # Applies to all files under models/example/
     example:
       +materialized: table
+=======
+  dbt_fundamentals_on_demand:
+    staging:
+    #best practice for staging -> view
+      +materialized: view
+    
+    marts:
+    #best practice a table for bi tool
+      +materialized: table
+    # si une nouvelle colonne est ajoutée alors ca passe pas
+      +on_schema_change: fail
+      +schema: use_case_tableau
+
+>>>>>>> cdbea2ea35c24dd214972dfe0aaba4e7c8f13be4
