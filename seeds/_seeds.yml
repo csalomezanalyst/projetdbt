@@ -1,0 +1,9 @@
+  seeds:
+    - name: employees
+      description: a csv mapping customer id and employee_id
+      columns:
+        - name: employee_id
+        - name: customer_id
+          data_tests:
+          - unique
+          - not_null
